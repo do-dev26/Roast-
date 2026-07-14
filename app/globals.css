@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0A0F0D;
+  color: #F7F3E9;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* Ticket stub perforation — the signature element.
+   A dashed "tear line" made from a repeating radial-gradient of ink-colored notches
+   cut into the paper card, like a real ticket stub. */
+.ticket-perforation {
+  position: relative;
+  border-top: 2px dashed rgba(20, 23, 43, 0.25);
+}
+.ticket-perforation::before,
+.ticket-perforation::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: #0A0F0D;
+  border-radius: 50%;
+}
+.ticket-perforation::before { left: -10px; }
+.ticket-perforation::after { right: -10px; }
+
+.stamp-rotate {
+  transform: rotate(-6deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
